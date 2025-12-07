@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ocean-currents-package.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
-    </list>
+    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="first commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +57,23 @@
       <option name="presentableId" value="Default" />
       <updated>1765117803879</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1765118236044</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765118236044</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1765118374096</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765118374096</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -73,5 +86,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>
