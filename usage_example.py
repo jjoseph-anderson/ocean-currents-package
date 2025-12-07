@@ -1,4 +1,5 @@
 from ocean_currents.data_loader import DataLoader
+from ocean_currents.plotting import Plotter
 
 # Load data
 date = "20"
@@ -18,5 +19,5 @@ U_east, U_north, z = loader.load_adcp()
 # U_fun = lambda z: pedm.evaluate(p, z)
 #
 # # Plot
-# plotter = Plotter()
-# plotter.plot_profiles(z, U_east, U_fun, U_fun)
+plotter = Plotter()
+plotter.plot_profiles(z, U_east)
