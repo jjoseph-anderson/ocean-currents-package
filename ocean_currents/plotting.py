@@ -31,4 +31,17 @@ class Plotter:
 
         return np.abs(Ux_transformed_NSP), np.abs(Uy_transformed_NSP)
 
+    def plot_inversion(self, U_adjusted, U_standard, z, U_adcp, z_east):
+        plt.plot(U_adcp, z_east, zorder=1, color='red', label='ADCP')
+        plt.plot(U_adjusted(z), z, zorder=2, label="Adjusted PEDM", color='black', linestyle='--')
+        plt.plot(U_standard(z), z, label="Standard PEDM", color='blue')
+        plt.xlabel("U [m/s]")
+        plt.ylabel("Depth [m]")
+        plt.legend(loc="upper left")
+        plt.grid(True)
+        plt.xlim(-0.4, 0.8)
+        plt.ylim(-6, 0.25)
+        plt.tight_layout()
+        plt.show()
+
 

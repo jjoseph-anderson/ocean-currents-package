@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="added NSP plotting">
+    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="outlier detection and minimisation technique">
       <change afterPath="$PROJECT_DIR$/ocean_currents/SectionC_inversion.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ocean_currents/SectionB_fitting_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocean_currents/SectionB_fitting_method.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ocean_currents/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocean_currents/plotting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ocean_currents/wavenumber_domain.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocean_currents/SectionB_fitting_method.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usage_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/usage_example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -46,26 +47,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_loader.executor&quot;: &quot;Run&quot;,
-    &quot;Python.inversion.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plotter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plotting.executor&quot;: &quot;Run&quot;,
-    &quot;Python.setup.executor&quot;: &quot;Run&quot;,
-    &quot;Python.usage_example.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.SectionB_fitting_method.executor": "Run",
+    "Python.Test.executor": "Run",
+    "Python.data_loader.executor": "Run",
+    "Python.inversion.executor": "Run",
+    "Python.plotter.executor": "Run",
+    "Python.plotting.executor": "Run",
+    "Python.setup.executor": "Run",
+    "Python.usage_example.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;repository&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\josep\PycharmProjects\ocean-currents-package\ocean_currents" />
@@ -142,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765919434310</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="outlier detection and minimisation technique">
+      <option name="closed" value="true" />
+      <created>1765922296391</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1765922296391</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,6 +171,7 @@
     <MESSAGE value="structured package" />
     <MESSAGE value="commit" />
     <MESSAGE value="added NSP plotting" />
-    <option name="LAST_COMMIT_MESSAGE" value="added NSP plotting" />
+    <MESSAGE value="outlier detection and minimisation technique" />
+    <option name="LAST_COMMIT_MESSAGE" value="outlier detection and minimisation technique" />
   </component>
 </project>

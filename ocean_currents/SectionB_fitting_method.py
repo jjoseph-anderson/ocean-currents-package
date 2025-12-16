@@ -1,20 +1,20 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.interpolate import interp1d
 
 class fitting_method:
-    def __init__(self, U_east_ADCP, U_north_ADCP, direction):
+    def __init__(self, U_east_ADCP, U_north_ADCP, direction, z_east_ADCP):
         self.U_east_ADCP = U_east_ADCP
         self.U_north_ADCP = U_north_ADCP
         self.direction = direction
+        self.z_east_ADCP = z_east_ADCP
         pass
 
-    def dopp_shift_4poly(self, point, U_east, z_east_ADCP, n):
+    def dopp_shift_4poly(self, point, U_east, n):
         # Section B1 - Insert a value for the point at z=0 and then perform 4th order polynomial fit
 
         U_east_inter = np.insert(U_east, 0, point)
-        z_east_inter = np.insert(z_east_ADCP, 0, 0)
+        z_east_inter = np.insert(self.z_east_ADCP, 0, 0)
 
         coefficients = np.polyfit(z_east_inter, U_east_inter, n)
         polynomial = np.poly1d(coefficients)
@@ -28,7 +28,7 @@ class fitting_method:
         k_east = np.linspace(0.01, 0.35, 40)
 
         for i in range(len(k_east)):
-            integral = 2 * k_east[i] * np.trapz(U_poly * np.e ** (2 * k_east[i] * z_poly), x=z_poly)
+            integral = 2 * k_east[i] * np.trapezoid(U_poly * np.e ** (2 * k_east[i] * z_poly), x=z_poly)
 
             # integral = ( 2 * k_east[i] )/( np.sinh(32* k_east[i]) ) * np.trapz(U_poly*np.cosh(2*k_east[i]*(16+z_poly)), x= z_poly)
             ST_east.append(integral)
@@ -41,7 +41,7 @@ class fitting_method:
     def fpow(self, x, a, b, c):
         return a * x ** b + c
 
-    def plot_doppler_shifts(self, k_data, Ux_transformed, k_cut, f_sigma):
+    def plot_doppler_shifts(self, k_data, Ux_transformed, k_cut, f_sigma, n):
         cond = (k_data > k_cut)
         filtered_k = k_data[cond]
         filtered_U = Ux_transformed[cond]
@@ -67,9 +67,9 @@ class fitting_method:
         inter_U = []
         for point in inter_points:
             if self.direction == "East":
-                k, U, polyk, polyU = self.dopp_shift_4poly(point, self.U_east_ADCP)
+                k, U, polyk, polyU = self.dopp_shift_4poly(point, self.U_east_ADCP, n)
             else:
-                k, U, polyk, polyU = self.dopp_shift_4poly(point, self.U_north_ADCP)
+                k, U, polyk, polyU = self.dopp_shift_4poly(point, self.U_north_ADCP, n)
             inter_k.append(k)
             inter_U.append(U)
 
