@@ -29,4 +29,6 @@ class Plotter:
         plt.xlim(0, 0.37)
         plt.show()
 
+        return np.abs(Ux_transformed_NSP), np.abs(Uy_transformed_NSP)
+
 
