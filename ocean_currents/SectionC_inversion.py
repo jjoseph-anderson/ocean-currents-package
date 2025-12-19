@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import warnings
 from scipy.special import factorial, gamma, gammainc
-from numpy.polynomial.polyutils import RankWarning
 
 class Inversion:
     def __init__(self, discrete_z, discrete_U):
@@ -53,7 +52,7 @@ class Inversion:
                 for deltaz_T in deltaz_T_vals:
                     # STEP 1: Fit the mapped Doppler shifts to a polynomial of order nMax.
                     with warnings.catch_warnings():
-                        warnings.simplefilter('ignore', RankWarning)
+                        warnings.simplefilter('ignore', np.RankWarning)
                         p1 = np.polyfit(Z_eff, c_til, nMax)
 
                     # STEP 2: Create additional velocity-depth pairs by linearly extrapolating up to the surface and down to cutoff depth z_c
