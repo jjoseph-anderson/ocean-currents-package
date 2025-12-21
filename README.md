@@ -33,7 +33,7 @@ from ocean_currents.SectionB_fitting_method import fitting_method
 ```
 
 ### 0) Select inputs (Parameters & Data)
-Download data from the github repository in \data
+Download data from the github repository in \sample-data
 ___
 
 ```python
@@ -76,6 +76,8 @@ else:
     plotter.plot_profiles(z_east, U_north)
 Ux_transformed_NSP, Uy_transformed_NSP = plotter.plot_NSP(k_NSP, Ux_NSP, Uy_NSP, rot_angle)
 ```
+
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://raw.githubusercontent.com/jjoseph-anderson/ocean-currents-package/main/figures/Figure_1.png" alt="Ocean Currents Illustration" width="600"/> </p> ```
 
 ### 2) Outlier Detection and Minimisation Technique
 ___
