@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.optimize import curve_fit
 from scipy.interpolate import interp1d
+from scipy import integrate
 
 class fitting_method:
     def __init__(self, U_east_ADCP, U_north_ADCP, direction, z_east_ADCP):
@@ -28,7 +29,7 @@ class fitting_method:
         k_east = np.linspace(0.01, 0.35, 40)
 
         for i in range(len(k_east)):
-            integral = 2 * k_east[i] * np.trapezoid(U_poly * np.e ** (2 * k_east[i] * z_poly), x=z_poly)
+            integral = 2 * k_east[i] * integrate.trapezoid(U_poly * np.e ** (2 * k_east[i] * z_poly), x=z_poly)
 
             # integral = ( 2 * k_east[i] )/( np.sinh(32* k_east[i]) ) * np.trapz(U_poly*np.cosh(2*k_east[i]*(16+z_poly)), x= z_poly)
             ST_east.append(integral)
