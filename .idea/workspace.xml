@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="fix setup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ocean_currents/SectionB_fitting_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocean_currents/SectionB_fitting_method.py" afterDir="false" />
-    </list>
+    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="new version of trapezoid" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766346930624</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="new version of trapezoid">
+      <option name="closed" value="true" />
+      <created>1766351525158</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1766351525158</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,6 +212,7 @@
     <MESSAGE value="rankwarning issue" />
     <MESSAGE value="fixed rankwarning issue" />
     <MESSAGE value="fix setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix setup" />
+    <MESSAGE value="new version of trapezoid" />
+    <option name="LAST_COMMIT_MESSAGE" value="new version of trapezoid" />
   </component>
 </project>
