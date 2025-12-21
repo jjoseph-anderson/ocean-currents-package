@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="new version of trapezoid scipy">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usage_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/usage_example.py" afterDir="false" />
-    </list>
+    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="generalized usage file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766351816087</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="generalized usage file">
+      <option name="closed" value="true" />
+      <created>1766355585513</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1766355585513</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,6 +230,7 @@
     <MESSAGE value="fix setup" />
     <MESSAGE value="new version of trapezoid" />
     <MESSAGE value="new version of trapezoid scipy" />
-    <option name="LAST_COMMIT_MESSAGE" value="new version of trapezoid scipy" />
+    <MESSAGE value="generalized usage file" />
+    <option name="LAST_COMMIT_MESSAGE" value="generalized usage file" />
   </component>
 </project>
