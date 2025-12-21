@@ -21,7 +21,14 @@ ADCP_data_path = rf"C:\Users\josep\Desktop\PHYC40900_Project TP\Post_Review_Imag
 
 # Load Data
 loader = DataLoader(NSP_data_path, ADCP_data_path)
-U_east, U_north, z_east = loader.load_adcp()
+U_east_init, U_north_init, z_east_init = loader.load_adcp()
+U_east = U_east_init[~np.isnan(U_east_init)]
+U_north = U_north_init[~np.isnan(U_north_init)]
+if direction == "East":
+    z_east = z_east_init[~np.isnan(U_east_init)]
+else:
+    z_east = z_east_init[~np.isnan(U_north_init)]
+
 k_NSP, Ux_NSP, Uy_NSP = loader.load_nsp()
 
 # Section A: Plot NSP and ADCP Data

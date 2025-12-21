@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import warnings
 from scipy.special import factorial, gamma, gammainc
+from numpy.polynomial.polyutils import RankWarning
 
 class Inversion:
     def __init__(self, discrete_z, discrete_U):
@@ -52,7 +53,7 @@ class Inversion:
                 for deltaz_T in deltaz_T_vals:
                     # STEP 1: Fit the mapped Doppler shifts to a polynomial of order nMax.
                     with warnings.catch_warnings():
-                        warnings.simplefilter('ignore', np.RankWarning)
+                        warnings.simplefilter('ignore', RankWarning)
                         p1 = np.polyfit(Z_eff, c_til, nMax)
 
                     # STEP 2: Create additional velocity-depth pairs by linearly extrapolating up to the surface and down to cutoff depth z_c
@@ -71,7 +72,7 @@ class Inversion:
 
                     # STEP 3: Perform a second polynomial fit on the expanded set of points
                     with warnings.catch_warnings():
-                        warnings.simplefilter('ignore', np.RankWarning)
+                        warnings.simplefilter('ignore', RankWarning)
                         pEDM = np.polyfit(zEx, cTilEx, nMax)
 
                     # STEP 4: Scale polynomial coefficients defining U_EDM by n! as in equation (8) in the article.
@@ -89,7 +90,7 @@ class Inversion:
 
                     # STEP 6: Perform a final polynomial fit on the expanded set of points.
                     with warnings.catch_warnings():
-                        warnings.simplefilter('ignore', np.RankWarning)
+                        warnings.simplefilter('ignore', RankWarning)
                         pPEDM = np.polyfit(zEx2, Uvals, nMax)
 
                     # Calculate Doppler shifts assuming U_EDM or U_PEDM as the current profile, using the forward problem.
@@ -180,7 +181,7 @@ class Inversion:
                 for deltaz_T in deltaz_T_vals:
                     # STEP 1: Fit the mapped Doppler shifts to a polynomial of order nMax.
                     with warnings.catch_warnings():
-                        warnings.simplefilter('ignore', np.RankWarning)
+                        warnings.simplefilter('ignore', RankWarning)
                         p1 = np.polyfit(Z_eff, c_til, nMax)
 
                     # STEP 2: Create additional velocity-depth pairs by linearly extrapolating up to the surface and down to cutoff depth z_c
@@ -198,7 +199,7 @@ class Inversion:
 
                     # STEP 3: Perform a second polynomial fit on the expanded set of points
                     with warnings.catch_warnings():
-                        warnings.simplefilter('ignore', np.RankWarning)
+                        warnings.simplefilter('ignore', RankWarning)
                         pEDM = np.polyfit(zEx, cTilEx, nMax)
 
                     # STEP 4: Scale polynomial coefficients defining U_EDM by n! as in equation (8) in the article.
@@ -227,7 +228,7 @@ class Inversion:
 
                     # STEP 6: Perform a final polynomial fit on the expanded set of points.
                     with warnings.catch_warnings():
-                        warnings.simplefilter('ignore', np.RankWarning)
+                        warnings.simplefilter('ignore', RankWarning)
                         pPEDM = np.polyfit(zEx2, Uvals, nMax)
 
                     # Calculate Doppler shifts assuming U_EDM or U_PEDM as the current profile, using the forward problem.

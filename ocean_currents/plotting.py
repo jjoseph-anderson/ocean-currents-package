@@ -8,6 +8,7 @@ class Plotter:
 
     def plot_profiles(self, z, U_adcp):
         plt.plot(U_adcp, z, color='red', label='ADCP')
+        plt.xlim(-0.4, 0.8)
         plt.xlabel("U [m/s]")
         plt.ylabel("Depth [m]")
         plt.legend()
