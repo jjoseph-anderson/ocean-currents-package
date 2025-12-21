@@ -33,12 +33,11 @@ from ocean_currents.SectionB_fitting_method import fitting_method
 ```
 
 ### 0) Select inputs (Parameters & Data)
+Download data from the github repository in \data
 ___
 
 ```python
 # specify a radar image sequence and a current direction
-date = "20"
-hour = "00"
 direction = "East"
 
 # Required Parameters (the last two are discussed in the sensitivity analysis section of the paper
@@ -49,8 +48,9 @@ f_sigma = 1
 ```
 
 ```python
-NSP_data_path = rf"C:\Users\josep\Desktop\PHYC40900_Project TP\Post_Review_Images\Generalize Process\NSP Points\NSP_{date}_{hour}.txt"
-ADCP_data_path = rf"C:\Users\josep\Desktop\PHYC40900_Project TP\Post_Review_Images\Generalize Process\ADCP measurments\{date}Jan2022_{hour}00.mat"
+# change to your local directory
+NSP_data_path = rf"C:\Users\josep\Downloads\NSP_20_00.txt"
+ADCP_data_path = rf"C:\Users\josep\Downloads\20Jan2022_0000.mat"
 
 # Load Data
 loader = DataLoader(NSP_data_path, ADCP_data_path)
