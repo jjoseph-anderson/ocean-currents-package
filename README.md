@@ -12,7 +12,8 @@ This Python package has been created as part of our recent paper *Advances in ex
 ### Import required packages
 ___
 
-'''python 
-import numpy as np
-import matplotlib.pyplot as plt
-import h5py
+```python
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))
