@@ -77,7 +77,8 @@ else:
 Ux_transformed_NSP, Uy_transformed_NSP = plotter.plot_NSP(k_NSP, Ux_NSP, Uy_NSP, rot_angle)
 ```
 
-<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_1.png" alt="Ocean Currents Illustration" width="600"/> </p> ```
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_1.png" alt="Ocean Currents Illustration 1" width="600"/> </p> ```
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_2.png" alt="Ocean Currents Illustration 2" width="600"/> </p> ```
 
 ### 2) Outlier Detection and Minimisation Technique
 ___
@@ -112,3 +113,4 @@ if direction=="East":
 else:
     plotter.plot_inversion(U_fun_adjusted, U_fun_standard, z, U_north, z_east)
 ```
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_3.png" alt="Ocean Currents Illustration 3" width="600"/> </p> ```
