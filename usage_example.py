@@ -5,9 +5,9 @@ from ocean_currents.SectionB_fitting_method import fitting_method
 import numpy as np
 
 # specify a radar image sequence and a current direction
-date = "20"
-hour = "00"
-direction = "North"
+#date = "20"
+#hour = "00"
+direction = "East"
 
 # Required Parameters
 rot_angle = 4*np.pi/9 # rotation angle for nsp points
@@ -15,9 +15,8 @@ n = 4 # polynomial degree
 k_cut = 0.11
 f_sigma = 1
 
-
-NSP_data_path = rf"C:\Users\josep\Desktop\PHYC40900_Project TP\Post_Review_Images\Generalize Process\NSP Points\NSP_{date}_{hour}.txt"
-ADCP_data_path = rf"C:\Users\josep\Desktop\PHYC40900_Project TP\Post_Review_Images\Generalize Process\ADCP measurments\{date}Jan2022_{hour}00.mat"
+NSP_data_path = rf"C:\Users\josep\Downloads\NSP_20_00.txt"
+ADCP_data_path = rf"C:\Users\josep\Downloads\20Jan2022_0000.mat"
 
 # Load Data
 loader = DataLoader(NSP_data_path, ADCP_data_path)
