@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="rankwarning issue">
+    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="fixed rankwarning issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ocean_currents/SectionC_inversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocean_currents/SectionC_inversion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ocean_currents/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocean_currents/plotting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usage_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/usage_example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766151470067</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fixed rankwarning issue">
+      <option name="closed" value="true" />
+      <created>1766341322453</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1766341322453</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +195,7 @@
     <MESSAGE value="outlier detection and minimisation technique" />
     <MESSAGE value="added inversion but not working yet" />
     <MESSAGE value="rankwarning issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="rankwarning issue" />
+    <MESSAGE value="fixed rankwarning issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed rankwarning issue" />
   </component>
 </project>

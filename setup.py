@@ -8,7 +8,6 @@ setup(
         'numpy',
         'matplotlib',
         'scipy',
-        'h5py',
-        'tqdm'
+        'h5py'
     ],
 )
