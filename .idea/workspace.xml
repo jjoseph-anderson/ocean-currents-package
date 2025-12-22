@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="generalized usage file">
-      <change afterPath="$PROJECT_DIR$/ocean_currents/Environmental_Conditions.py" afterDir="false" />
+    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="added polar histogram">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ocean_currents/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocean_currents/plotting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usage_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/usage_example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766355613604</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="added polar histogram">
+      <option name="closed" value="true" />
+      <created>1766438319180</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1766438319180</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,6 +249,7 @@
     <MESSAGE value="new version of trapezoid" />
     <MESSAGE value="new version of trapezoid scipy" />
     <MESSAGE value="generalized usage file" />
-    <option name="LAST_COMMIT_MESSAGE" value="generalized usage file" />
+    <MESSAGE value="added polar histogram" />
+    <option name="LAST_COMMIT_MESSAGE" value="added polar histogram" />
   </component>
 </project>
