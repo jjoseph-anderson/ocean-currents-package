@@ -179,4 +179,4 @@ for w in W_data:
 
 plotter.plot_time_series(Du, Dm, times)
 ```
-<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_5.png" alt="Ocean Currents Illustration 3" width="400"/> </p> 
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_5.png" alt="Ocean Currents Illustration 3" width="600"/> </p> 
