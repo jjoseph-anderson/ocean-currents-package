@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="generalized usage file" />
+    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="generalized usage file">
+      <change afterPath="$PROJECT_DIR$/ocean_currents/Environmental_Conditions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ocean_currents/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocean_currents/plotting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usage_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/usage_example.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -41,28 +46,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.SectionB_fitting_method.executor": "Run",
-    "Python.SectionC_inversion.executor": "Run",
-    "Python.Test.executor": "Run",
-    "Python.data_loader.executor": "Run",
-    "Python.inversion.executor": "Run",
-    "Python.plotter.executor": "Run",
-    "Python.plotting.executor": "Run",
-    "Python.setup.executor": "Run",
-    "Python.usage_example.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.SectionB_fitting_method.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SectionC_inversion.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_loader.executor&quot;: &quot;Run&quot;,
+    &quot;Python.inversion.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plotter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plotting.executor&quot;: &quot;Run&quot;,
+    &quot;Python.setup.executor&quot;: &quot;Run&quot;,
+    &quot;Python.usage_example.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "repository"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\josep\PycharmProjects\ocean-currents-package" />
@@ -204,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766355585513</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="generalized usage file">
+      <option name="closed" value="true" />
+      <created>1766355613604</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1766355613604</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

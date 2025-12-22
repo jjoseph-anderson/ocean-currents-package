@@ -45,4 +45,33 @@ class Plotter:
         plt.tight_layout()
         plt.show()
 
+    def plot_polar_histogram(self, Du, Dm):
+        fig = plt.figure(figsize=(40 / 2.54, 12 / 2.54))
+        fig.subplots_adjust(wspace=0.3)
+        bin_size = 4
+        # Current directions
+        ax1 = plt.subplot(1, 1, 1, projection='polar')
+        ax1.set_theta_zero_location('N')
+        ax1.set_theta_direction(-1)
+        ax1.tick_params(axis='y', labelsize=8)
+        plt.grid(axis='both', color='dimgrey', linestyle='-.', linewidth=0.5, alpha=0.5)
+
+        a, b = np.histogram(Du, bins=np.arange(0, 360 + bin_size, bin_size), density=True)
+        centers = np.deg2rad(np.ediff1d(b) // 2 + b[:-1])
+
+        ax1.bar(centers, a, width=np.deg2rad(bin_size), bottom=0.0, linewidth=0.7,
+                color='.8', edgecolor='#ff7f0e', label='Current direction coming from')
+
+        a, b = np.histogram(Dm, bins=np.arange(0, 360 + bin_size, bin_size), density=True)
+        centers = np.deg2rad(np.ediff1d(b) // 2 + b[:-1])
+        ax1.bar(centers, a, width=np.deg2rad(bin_size), bottom=0.0, linewidth=0.7,
+                color='.8', edgecolor='#1f77b4', label='Mean wave direction coming from ')
+
+        plt.legend(bbox_to_anchor=(0.92, -0.1, 0., 0.), fontsize='medium', markerscale=1.2)
+
+        ax1.set_rlabel_position(60)
+        plt.tight_layout()
+        plt.show()
+        plt.close(fig)
+
 
