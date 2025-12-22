@@ -69,7 +69,12 @@ else:
     plotter.plot_inversion(U_fun_adjusted, U_fun_standard, z, U_north, z_east)
 
 # Environmental Conditions
-nbox = 1  # box 1, 2, 3
+finame = r'C:\Users\josep\Downloads\PAR1_csi_202201.txt'
+
+lat0 = 32.07833
+lon0 = 34.47233
+
+# read WAMOS PAR_csi.txt
 year = 2022
 m = 1  # month
 day_beg = 18
@@ -78,16 +83,7 @@ dt_beg = datetime(year, m, day_beg, 0, 0)
 dt_end = datetime(year, m, day_end, 2, 0)
 d_beg = dt_beg.strftime("%d %b %Y")
 d_end = dt_end.strftime("%d %b %Y")
-
-finame = r'C:\\Users\\josep\\Desktop\\PHYC40900_Project TP\\2022_01_timeseries\\PAR%1i_csi_%4i%02i.txt' % (nbox, year, m)
-foname = './PAR%1i_%4i%02i_directions.png' % (nbox, year, m)
-
-lat0 = 32.07833
-lon0 = 34.47233
-
-# read WAMOS PAR_csi.txt
 W_data = read_para(finame)
-print(len(W_data))
 
 Dp, Dm = [], [] # mean wave direction, peak wave direction
 Du = []  # current direction
@@ -108,3 +104,20 @@ for w in W_data:
         Dswell.append(w.ds)  # swell dir
 
 plotter.plot_polar_histogram(Du, Dm)
+
+# Collect time series
+Du, Dm, times = [], [], []
+
+for w in W_data:
+    if dt_beg <= w.dt <= dt_end:
+        times.append(w.dt)
+        if w.usp >= 0:
+            Du.append(w.dir)   # current direction
+        else:
+            Du.append(np.nan)  # keep alignment
+        if w.dm >= 0:
+            Dm.append(w.dm)    # mean wave direction
+        else:
+            Dm.append(np.nan)
+
+plotter.plot_time_series(Du, Dm, times)

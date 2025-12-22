@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="added polar histogram">
+    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="added polar histogram usage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PAR1_csi_202201.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample-data/PAR1_csi_202201.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ocean_currents/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocean_currents/plotting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usage_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/usage_example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +70,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\josep\PycharmProjects\ocean-currents-package\sample-data" />
       <recent name="C:\Users\josep\PycharmProjects\ocean-currents-package" />
       <recent name="C:\Users\josep\PycharmProjects\ocean-currents-package\ocean_currents" />
     </key>
@@ -222,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766438319180</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added polar histogram usage">
+      <option name="closed" value="true" />
+      <created>1766442279199</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1766442279199</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +262,7 @@
     <MESSAGE value="new version of trapezoid scipy" />
     <MESSAGE value="generalized usage file" />
     <MESSAGE value="added polar histogram" />
-    <option name="LAST_COMMIT_MESSAGE" value="added polar histogram" />
+    <MESSAGE value="added polar histogram usage" />
+    <option name="LAST_COMMIT_MESSAGE" value="added polar histogram usage" />
   </component>
 </project>

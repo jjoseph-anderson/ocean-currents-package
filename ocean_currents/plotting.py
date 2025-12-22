@@ -1,6 +1,8 @@
 # plotting.py
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.dates as mdates
+import pandas as pd
 
 class Plotter:
     def __init__(self):
@@ -73,5 +75,46 @@ class Plotter:
         plt.tight_layout()
         plt.show()
         plt.close(fig)
+
+    def plot_time_series(self, Du, Dm, times):
+        # Plot time series
+        fig, ax = plt.subplots(figsize=(10, 5))
+        # Convert degrees to radians
+        Du_rad = np.deg2rad(Du)
+        Dm_rad = np.deg2rad(Dm)
+
+        times1 = np.array(times)[~np.isnan((Du_rad))]
+        times2 = np.array(times)[~np.isnan((Dm_rad))]
+
+        # Remove NaN values before continuing
+        Du_rad = Du_rad[~np.isnan(Du_rad)]
+        Dm_rad = Dm_rad[~np.isnan(Dm_rad)]
+
+        # Unwrap angles to remove artificial jumps
+        Du_unwrapped = np.unwrap(Du_rad)
+        Dm_unwrapped = np.unwrap(Dm_rad)
+
+        # Convert back to degrees for plotting
+        Du_smooth = np.rad2deg(Du_unwrapped)
+        Dm_smooth = np.rad2deg(Dm_unwrapped)
+
+        # Plot
+        plt.plot(times1, np.deg2rad(Du_smooth), color='orange', label='Current direction')
+        plt.plot(times2, Dm_smooth, color='blue', label='Mean wave direction')
+
+        ax.set_ylabel('Direction [°]')
+        ax.set_xlabel('Date')
+        # axes[0].set_title('(a) Current Direction')
+        ax.grid(True)
+        ax.xaxis.set_major_formatter(mdates.DateFormatter('%dth - %H:%M'))
+        plt.xticks(rotation=45)
+        ax.axvline(pd.Timestamp('2022-01-18 22:00'), color='black', linestyle='-', linewidth=1)
+        ax.axvline(pd.Timestamp('2022-01-20 00:00'), color='black', linestyle='-', linewidth=1)
+        ax.axvspan(pd.Timestamp('2022-01-18 22:00'), pd.Timestamp('2022-01-20 00:00'), color='black', alpha=0.1,
+                   label='Studied Window')
+        plt.legend()
+        plt.ylim(-180, 390)
+        plt.tight_layout()
+        plt.show()
 
 
