@@ -156,4 +156,4 @@ for w in W_data:
 
 plotter.plot_polar_histogram(Du, Dm)
 ```
-<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_4.png" alt="Ocean Currents Illustration 3" width="600"/> </p> ```
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_4.png" alt="Ocean Currents Illustration 3" width="400"/> </p> ```
