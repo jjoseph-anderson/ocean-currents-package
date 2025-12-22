@@ -77,8 +77,8 @@ else:
 Ux_transformed_NSP, Uy_transformed_NSP = plotter.plot_NSP(k_NSP, Ux_NSP, Uy_NSP, rot_angle)
 ```
 
-<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_1.png" alt="Ocean Currents Illustration 1" width="600"/> </p> ```
-<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_2.png" alt="Ocean Currents Illustration 2" width="600"/> </p> ```
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_1.png" alt="Ocean Currents Illustration 1" width="400"/> </p> 
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_2.png" alt="Ocean Currents Illustration 2" width="400"/> </p>
 
 ### 2) Outlier Detection and Minimisation Technique
 ___
@@ -113,4 +113,47 @@ if direction=="East":
 else:
     plotter.plot_inversion(U_fun_adjusted, U_fun_standard, z, U_north, z_east)
 ```
-<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_3.png" alt="Ocean Currents Illustration 3" width="600"/> </p> ```
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_3.png" alt="Ocean Currents Illustration 3" width="400"/> </p> 
+
+### 4) Environmental Conditions
+___
+
+```python
+year = 2022
+m = 1  # month
+day_beg = 18
+day_end = 20
+dt_beg = datetime(year, m, day_beg, 0, 0)
+dt_end = datetime(year, m, day_end, 2, 0)
+d_beg = dt_beg.strftime("%d %b %Y")
+d_end = dt_end.strftime("%d %b %Y")
+
+finame = r'C:\Users\josep\Downloads\PAR1_csi_202201.txt'
+
+lat0 = 32.07833
+lon0 = 34.47233
+
+# read WAMOS PAR_csi.txt
+W_data = read_para(finame)
+
+Dp, Dm = [], [] # mean wave direction, peak wave direction
+Du = []  # current direction
+Dsea, Dswell = [], []  # wind sea and swell directions if necessary and exist
+
+for w in W_data:
+    if w.dt < dt_beg or w.dt > dt_end:
+        continue
+    if w.usp >= 0:
+        Du.append(w.dir) # currents
+    if w.dp >= 0:
+        Dp.append(w.dp)  # peak dir
+    if w.dm >= 0:
+        Dm.append(w.dm)  # mean dir
+    if w.dw >= 0:
+        Dsea.append(w.dw)  # sea dir
+    if w.ds >= 0:
+        Dswell.append(w.ds)  # swell dir
+
+plotter.plot_polar_histogram(Du, Dm)
+```
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_4.png" alt="Ocean Currents Illustration 3" width="400"/> </p> 
