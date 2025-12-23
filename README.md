@@ -118,6 +118,8 @@ else:
 ### 4) Environmental Conditions
 ___
 
+#### 4.1) Polar Histogram
+
 ```python
 year = 2022
 m = 1  # month
@@ -157,3 +159,24 @@ for w in W_data:
 plotter.plot_polar_histogram(Du, Dm)
 ```
 <!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_4.png" alt="Ocean Currents Illustration 3" width="400"/> </p> 
+
+#### 4.2) Time Series
+
+```python
+Du, Dm, times = [], [], []
+
+for w in W_data:
+    if dt_beg <= w.dt <= dt_end:
+        times.append(w.dt)
+        if w.usp >= 0:
+            Du.append(w.dir)   # current direction
+        else:
+            Du.append(np.nan)  # keep alignment
+        if w.dm >= 0:
+            Dm.append(w.dm)    # mean wave direction
+        else:
+            Dm.append(np.nan)
+
+plotter.plot_time_series(Du, Dm, times)
+```
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_5.png" alt="Ocean Currents Illustration 3" width="600"/> </p> 
