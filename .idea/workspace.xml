@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="added polar histogram usage">
+    <list default="true" id="bee3fd03-ac9f-42c3-8747-cf39641ff7a9" name="Changes" comment="added time series">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PAR1_csi_202201.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample-data/PAR1_csi_202201.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ocean_currents/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocean_currents/plotting.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usage_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/usage_example.py" afterDir="false" />
     </list>
@@ -234,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766442279199</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added time series">
+      <option name="closed" value="true" />
+      <created>1766443799478</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1766443799478</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,6 +270,7 @@
     <MESSAGE value="generalized usage file" />
     <MESSAGE value="added polar histogram" />
     <MESSAGE value="added polar histogram usage" />
-    <option name="LAST_COMMIT_MESSAGE" value="added polar histogram usage" />
+    <MESSAGE value="added time series" />
+    <option name="LAST_COMMIT_MESSAGE" value="added time series" />
   </component>
 </project>

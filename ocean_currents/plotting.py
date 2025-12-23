@@ -117,4 +117,40 @@ class Plotter:
         plt.tight_layout()
         plt.show()
 
+    def plot_Hs_Tp(self, t, Tp, H):
+        fig, ax1 = plt.subplots(figsize=(8, 6))
 
+        color = 'blue'
+        ax1.set_xlabel('Date')
+        ax1.set_ylabel('$H_s$ [m]', color=color)
+        ax1.scatter(t, H, color=color, label='$H_s$', s=12)
+        ax1.tick_params(axis='y', labelcolor=color)
+
+        ax2 = ax1.twinx()  # instantiate a second Axes that shares the same x-axis
+
+        color = 'red'
+        ax2.set_ylabel('$T_p$ [s]', color=color)  # we already handled the x-label with ax1
+        ax2.scatter(t, Tp, color=color, label='$T_p$', s=12)
+        ax2.tick_params(axis='y', labelcolor=color)
+
+        # Set the major ticks to every 2 hours
+        ax1.xaxis.set_major_locator(mdates.HourLocator(interval=24))
+
+        # Formatting X-axis tick labels with DateFormatter
+        ax1.xaxis.set_major_formatter(mdates.DateFormatter('%dth - %H:%M'))
+
+        # Auto-rotate the date labels
+        fig.autofmt_xdate()
+
+        # Formatting
+        plt.xticks(rotation=45)
+        ax1.grid(True)
+        plt.title("")
+        # plt.legend(loc='upper left', bbox_to_anchor=(0.5, 0.5))
+        ax1.axvline(pd.Timestamp('2022-01-18 22:00'), color='black', linestyle='-', linewidth=1)
+        ax1.axvline(pd.Timestamp('2022-01-20 00:00'), color='black', linestyle='-', linewidth=1)
+        ax1.axvspan(pd.Timestamp('2022-01-18 22:00'), pd.Timestamp('2022-01-20 00:00'), color='black', alpha=0.1,
+                    label="Studied Window")
+        fig.legend(loc='upper right', bbox_to_anchor=(0.88, 0.88))
+
+        plt.show()

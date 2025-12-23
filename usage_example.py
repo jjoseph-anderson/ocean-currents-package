@@ -19,6 +19,9 @@ f_sigma = 1
 
 NSP_data_path = rf"C:\Users\josep\Downloads\NSP_20_00.txt"
 ADCP_data_path = rf"C:\Users\josep\Downloads\20Jan2022_0000.mat"
+environ_cond_current_direction = r'C:\Users\josep\Downloads\PAR1_csi_202201.txt'
+environ_cond_Hs_Tp = r'C:\Users\josep\Desktop\PHYC40900_Project TP\New_TP_HS\January_2022_timeseries\MPA1_csi_202201.txt'
+
 
 # Load Data
 loader = DataLoader(NSP_data_path, ADCP_data_path)
@@ -69,8 +72,6 @@ else:
     plotter.plot_inversion(U_fun_adjusted, U_fun_standard, z, U_north, z_east)
 
 # Environmental Conditions
-finame = r'C:\Users\josep\Downloads\PAR1_csi_202201.txt'
-
 lat0 = 32.07833
 lon0 = 34.47233
 
@@ -83,7 +84,7 @@ dt_beg = datetime(year, m, day_beg, 0, 0)
 dt_end = datetime(year, m, day_end, 2, 0)
 d_beg = dt_beg.strftime("%d %b %Y")
 d_end = dt_end.strftime("%d %b %Y")
-W_data = read_para(finame)
+W_data = read_para(environ_cond_current_direction)
 
 Dp, Dm = [], [] # mean wave direction, peak wave direction
 Du = []  # current direction
@@ -121,3 +122,66 @@ for w in W_data:
             Dm.append(np.nan)
 
 plotter.plot_time_series(Du, Dm, times)
+
+# Significant wave height and peak period
+#  parameters for choosing year, month, and box for timeseries visualization
+nbox = 1
+year = 2022
+m = 1
+day_beg = 18
+day_end = 20
+dt_beg = datetime(year, m, day_beg, 0, 0)
+dt_end = datetime(year, m, day_end, 23, 59)
+
+# MPA timeseries (space-time averaged)
+lat0 = 32.07833
+lon0 = 34.47233
+
+# read WAMOS *_csi.txt
+W_data = read_para(environ_cond_Hs_Tp)  # Pavel calibration
+print(len(W_data))
+
+t, tw, ts, tu = [], [], [], []  # Datetime array for SWH, Wind sea, Swell, current
+H, Hm, Tp, Lp, Tm, Dp, Dm, Vm = [], [], [], [], [], [], [], []  # arrays for SWH
+Pw, Dw, Lw, Vw, Vx, Vy = [], [], [], [], [], []  # arrays for Wind Sea
+Ps, Ds, Ls, Vs, Vxs, Vys = [], [], [], [], [], []  # arrays for Swell
+U, Du, Tlim = [], [], []  # array for currents and sea-swell separation period
+
+for w in W_data:
+    if w.dt < dt_beg or w.dt > dt_end:
+        continue
+    if w.h >= 0:
+        t.append(w.dt)
+        H.append(w.h)
+        Hm.append(w.hmax)
+        Tp.append(w.tp)
+        Lp.append(w.lp)
+        Tm.append(w.tm)
+        Dm.append(w.dm)
+        Vm.append(w.vm)
+        Tlim.append(w.tlim)
+
+    if w.ps >= 0:
+        ts.append(w.dt)
+        Ps.append(w.ps)
+        Ds.append(w.ds)
+        Ls.append(w.ls)
+        Vs.append(w.vs)
+        Vxs.append(w.vxs)
+        Vys.append(w.vys)
+
+    if w.pw >= 0:
+        tw.append(w.dt)
+        Pw.append(w.pw)
+        Dw.append(w.dw)
+        Lw.append(w.lw)
+        Vw.append(w.vv)
+        Vx.append(w.vx)
+        Vy.append(w.vs)
+
+    if w.usp >= 0:
+        tu.append(w.dt)
+        U.append(w.usp)
+        Du.append(w.dir)
+
+plotter.plot_Hs_Tp(t, Tp, H)
