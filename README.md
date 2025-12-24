@@ -16,6 +16,7 @@ ___
 import numpy as np
 import matplotlib.pyplot as plt
 import h5py
+from datetime import datetime
 ```
 
 ### Import ocean-currents package
@@ -30,6 +31,7 @@ from ocean_currents.data_loader import DataLoader
 from ocean_currents.plotting import Plotter
 from ocean_currents.SectionC_inversion import Inversion
 from ocean_currents.SectionB_fitting_method import fitting_method
+from ocean_currents.Environmental_Conditions import read_para
 ```
 
 ### 0) Select inputs (Parameters & Data)
@@ -51,6 +53,8 @@ f_sigma = 1
 # change to your local directory
 NSP_data_path = rf"C:\Users\josep\Downloads\NSP_20_00.txt"
 ADCP_data_path = rf"C:\Users\josep\Downloads\20Jan2022_0000.mat"
+environ_cond_current_direction = r'C:\Users\josep\Downloads\PAR1_csi_202201.txt'
+environ_cond_Hs_Tp = r'C:\Users\Downloads\MPA1_csi_202201.txt'
 
 # Load Data
 loader = DataLoader(NSP_data_path, ADCP_data_path)
@@ -180,3 +184,56 @@ for w in W_data:
 plotter.plot_time_series(Du, Dm, times)
 ```
 <!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_5.png" alt="Ocean Currents Illustration 3" width="600"/> </p> 
+
+#### 4.3) Mean Significant Wave Height $(H_s)$ and Mean Peak Period $(T_p)$
+
+```python
+# read WAMOS *_csi.txt
+W_data = read_para(environ_cond_Hs_Tp)  # Pavel calibration
+
+t, tw, ts, tu = [], [], [], []  # Datetime array for SWH, Wind sea, Swell, current
+H, Hm, Tp, Lp, Tm, Dp, Dm, Vm = [], [], [], [], [], [], [], []  # arrays for SWH
+Pw, Dw, Lw, Vw, Vx, Vy = [], [], [], [], [], []  # arrays for Wind Sea
+Ps, Ds, Ls, Vs, Vxs, Vys = [], [], [], [], [], []  # arrays for Swell
+U, Du, Tlim = [], [], []  # array for currents and sea-swell separation period
+
+for w in W_data:
+    if w.dt < dt_beg or w.dt > dt_end:
+        continue
+    if w.h >= 0:
+        t.append(w.dt)
+        H.append(w.h)
+        Hm.append(w.hmax)
+        Tp.append(w.tp)
+        Lp.append(w.lp)
+        Tm.append(w.tm)
+        Dm.append(w.dm)
+        Vm.append(w.vm)
+        Tlim.append(w.tlim)
+
+    if w.ps >= 0:
+        ts.append(w.dt)
+        Ps.append(w.ps)
+        Ds.append(w.ds)
+        Ls.append(w.ls)
+        Vs.append(w.vs)
+        Vxs.append(w.vxs)
+        Vys.append(w.vys)
+
+    if w.pw >= 0:
+        tw.append(w.dt)
+        Pw.append(w.pw)
+        Dw.append(w.dw)
+        Lw.append(w.lw)
+        Vw.append(w.vv)
+        Vx.append(w.vx)
+        Vy.append(w.vs)
+
+    if w.usp >= 0:
+        tu.append(w.dt)
+        U.append(w.usp)
+        Du.append(w.dir)
+
+plotter.plot_Hs_Tp(t, Tp, H)
+```
+<!-- Insert GitHub-hosted image --> <p align="center"> <img src="https://github.com/jjoseph-anderson/ocean-currents-package/blob/master/figures/Figure_6.png" alt="Ocean Currents Illustration 3" width="400"/> </p> 
